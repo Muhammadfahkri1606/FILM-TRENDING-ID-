@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Tambah Film</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>TAMBAH FILM</h1>
+    </header>
+
+    <main class="form-box">
+        <a href="index.html" class="btn-back">← Kembali ke Web</a>
+        
+        <form id="adminForm">
+            <label>Judul Film</label>
+            <input type="text" id="judul" required placeholder="Contoh: Iron Man">
+
+            <label>Kategori</label>
+            <select id="kategori">
+                <option>Action</option>
+                <option>Sci-Fi</option>
+                <option>Horror</option>
+                <option>Drama</option>
+                <option>Comedy</option>
+                <option>Anime</option>
+                <option>Romance</option>
+            </select>
+
+            <label>Deskripsi</label>
+            <textarea id="desc" rows="3" required></textarea>
+
+            <label>Link Poster (Gambar)</label>
+            <input type="url" id="poster" required placeholder="https://...">
+
+            <label>ID Video (Short.icu)</label>
+            <input type="text" id="videoid" required placeholder="Contoh: d9MyqW3xTuE">
+
+            <button type="submit" class="btn-primary">UPLOAD FILM</button>
+            <p id="msg" style="color:#0f0; text-align:center; display:none; margin-top:10px;">Berhasil Upload!</p>
+        </form>
+    </main>
+
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>

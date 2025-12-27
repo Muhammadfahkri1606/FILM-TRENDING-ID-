@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nonton Film</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="btn-back" style="color:var(--accent)">← Kembali</a>
+    </header>
+    <main style="max-width:800px">
+        <div class="video-box">
+            <iframe id="player" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <h1 id="title" style="color:var(--accent); margin-bottom:10px;">Memuat...</h1>
+        <span id="cat-badge" style="background:#333; padding:5px 10px; border-radius:15px; font-size:0.8rem;">...</span>
+        <p id="desc" style="margin-top:20px; line-height:1.6; color:#ccc;"></p>
+    </main>
+    <script type="module" src="js/play.js"></script>
+</body>
+</html>
