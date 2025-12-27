@@ -1,0 +1,111 @@
+/* File: css/style.css */
+:root {
+    --bg-main: #0f0f0f;
+    --bg-card: #1a1a1a;
+    --text-main: #ffffff;
+    --text-muted: #b3b3b3;
+    --accent: #E50914; /* Merah Netflix */
+    --shadow-3d: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    padding-bottom: 50px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to bottom, #000 0%, transparent 100%);
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    backdrop-filter: blur(5px);
+}
+header h1 { color: var(--accent); font-size: 1.8rem; text-shadow: 0 2px 4px #000; font-weight: 800; }
+header p { color: var(--text-muted); font-size: 0.9rem; margin-top: 5px; }
+
+/* TOMBOL ADMIN (Default: Hilang) */
+#admin-btn {
+    display: none; /* RAHASIA: Hanya muncul jika IP cocok */
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid #444;
+}
+
+/* Container Utama */
+main { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+/* Judul Kategori */
+.category-title {
+    font-size: 1.4rem;
+    margin: 30px 0 15px 0;
+    padding-left: 10px;
+    border-left: 5px solid var(--accent);
+    color: white;
+}
+
+/* Grid Film Responsif */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* HP: 2 Kolom */
+    gap: 15px;
+}
+/* Tablet & PC */
+@media (min-width: 768px) { .grid-container { grid-template-columns: repeat(4, 1fr); gap: 20px; } }
+@media (min-width: 1024px) { .grid-container { grid-template-columns: repeat(5, 1fr); gap: 25px; } }
+
+/* Kartu Film (Efek 3D) */
+.film-card {
+    background: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    box-shadow: var(--shadow-3d);
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform-style: preserve-3d;
+}
+.film-card:active, .film-card:hover {
+    transform: translateY(-8px) scale(1.02); /* Efek Timbul */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+    z-index: 10;
+}
+
+.poster { width: 100%; aspect-ratio: 2/3; object-fit: cover; }
+.info {
+    padding: 10px;
+    background: linear-gradient(to top, #000, transparent);
+    position: absolute; bottom: 0; width: 100%;
+}
+.info h3 { font-size: 0.9rem; color: #fff; text-shadow: 0 1px 2px #000; margin: 0; }
+
+/* Form Admin */
+.form-box { max-width: 500px; margin: 0 auto; }
+input, select, textarea {
+    width: 100%; padding: 12px; margin-bottom: 15px;
+    background: #222; border: 1px solid #444; color: white; border-radius: 5px;
+}
+.btn-primary { 
+    width: 100%; padding: 12px; background: var(--accent); color: white; border: none; font-weight: bold; border-radius: 5px; 
+}
+.btn-back { display:inline-block; margin-bottom:15px; color:#ccc; text-decoration:none; }
+
+/* Player Page */
+.video-box {
+    position: relative; padding-bottom: 56.25%; background: #000;
+    border-radius: 15px; overflow: hidden; margin-bottom: 20px;
+    box-shadow: var(--shadow-3d);
+}
+.video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
